@@ -1,0 +1,60 @@
+---
+import Container from '../base/Container.astro';
+
+const currentPath = new URL(Astro.request.url).pathname;
+const isProductosPage = currentPath === '/productos' || currentPath === '/productos/';
+---
+
+<header class="sticky top-0 z-50 bg-white shadow-md" id="header">
+  <Container className="py-4 flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <div class="w-10 h-10 bg-lluvia-primary rounded-lg flex items-center justify-center font-bold text-lluvia-secondary">
+        L
+      </div>
+      <span class="text-2xl font-bold text-lluvia-secondary">Lluvia</span>
+    </div>
+    
+    <nav class="hidden md:flex gap-8">
+      <a href={isProductosPage ? '/' : '#home'} class="text-lluvia-secondary hover:text-lluvia-primary transition-colors duration-300 font-medium">Inicio</a>
+      <a href={isProductosPage ? '/#mision' : '#mision'} class="text-lluvia-secondary hover:text-lluvia-primary transition-colors duration-300 font-medium">Misión</a>
+      <a href={isProductosPage ? '/#vision' : '#vision'} class="text-lluvia-secondary hover:text-lluvia-primary transition-colors duration-300 font-medium">Visión</a>
+      <a href="/productos" class="text-lluvia-secondary hover:text-lluvia-primary transition-colors duration-300 font-medium">Productos</a>
+      <a href={isProductosPage ? '/#contacto' : '#contacto'} class="text-lluvia-secondary hover:text-lluvia-primary transition-colors duration-300 font-medium">Contacto</a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button class="md:hidden flex flex-col gap-1 focus:outline-none" id="mobile-menu-btn">
+      <span class="w-6 h-0.5 bg-lluvia-secondary block"></span>
+      <span class="w-6 h-0.5 bg-lluvia-secondary block"></span>
+      <span class="w-6 h-0.5 bg-lluvia-secondary block"></span>
+    </button>
+  </Container>
+
+  <!-- Mobile menu -->
+  <nav id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+    <Container className="py-4 flex flex-col gap-4">
+      <a href={isProductosPage ? '/' : '#home'} class="text-lluvia-secondary hover:text-lluvia-primary transition-colors">Inicio</a>
+      <a href={isProductosPage ? '/#mision' : '#mision'} class="text-lluvia-secondary hover:text-lluvia-primary transition-colors">Misión</a>
+      <a href={isProductosPage ? '/#vision' : '#vision'} class="text-lluvia-secondary hover:text-lluvia-primary transition-colors">Visión</a>
+      <a href="/productos" class="text-lluvia-secondary hover:text-lluvia-primary transition-colors">Productos</a>
+      <a href={isProductosPage ? '/#contacto' : '#contacto'} class="text-lluvia-secondary hover:text-lluvia-primary transition-colors">Contacto</a>
+    </Container>
+  </nav>
+</header>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close menu when clicking a link
+  const links = mobileMenu?.querySelectorAll('a');
+  links?.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>

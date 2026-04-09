@@ -1,0 +1,148 @@
+---
+import Container from '../base/Container.astro';
+import Button from '../base/Button.astro';
+---
+
+<section class="py-20 bg-white" id="contacto">
+  <Container>
+    <div data-aos="fade-up" class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-lluvia-secondary mb-4">
+        <span class="text-lluvia-primary">Contactanos</span>
+      </h2>
+      <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        Nos encantaría escuchar tus preguntas y sugerencias. Rellena el formulario y nos pondremos en contacto pronto.
+      </p>
+      <div class="w-20 h-1 bg-lluvia-primary mx-auto"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <!-- Contact Info -->
+      <div data-aos="fade-right" class="bg-gray-50 rounded-lg p-8">
+        <div class="w-12 h-12 bg-lluvia-primary rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-lluvia-secondary" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+          </svg>
+        </div>
+        <h3 class="font-bold text-lluvia-secondary mb-2">Email</h3>
+        <a href="mailto:info@lluvia.com" class="text-gray-600 hover:text-lluvia-primary transition-colors">info@lluvia.com</a>
+      </div>
+
+      <div data-aos="fade-up" class="bg-gray-50 rounded-lg p-8">
+        <div class="w-12 h-12 bg-lluvia-primary rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-lluvia-secondary" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773c.02.04.048.082.09.13.662.865 1.633 2.3 2.786 3.541C5.226 10.745 6.409 11.85 7.141 12.468l.738-1.474a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986v2.153a1 1 0 01-1 1h-2C7.82 17 2 11.18 2 4V3z" />
+          </svg>
+        </div>
+        <h3 class="font-bold text-lluvia-secondary mb-2">Teléfono</h3>
+        <a href="tel:+15551234567" class="text-gray-600 hover:text-lluvia-primary transition-colors">+1 (555) 123-4567</a>
+      </div>
+
+      <div data-aos="fade-left" class="bg-gray-50 rounded-lg p-8">
+        <div class="w-12 h-12 bg-lluvia-primary rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-lluvia-secondary" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <h3 class="font-bold text-lluvia-secondary mb-2">Ubicación</h3>
+        <p class="text-gray-600">Calle Principal 123<br />Ciudad, Estado 12345</p>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div data-aos="fade-up" class="bg-gray-50 rounded-lg p-8 md:p-12 max-w-2xl mx-auto">
+      <form class="space-y-6" method="POST" action="https://formspree.io/f/YOUR_FORM_ID" id="contactForm">
+        <div class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="name" class="block text-sm font-medium text-lluvia-secondary mb-2">Nombre</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-lluvia-primary focus:ring-1 focus:ring-lluvia-primary"
+                placeholder="Tu nombre"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-lluvia-secondary mb-2">Email</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-lluvia-primary focus:ring-1 focus:ring-lluvia-primary"
+                placeholder="tu@email.com"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="subject" class="block text-sm font-medium text-lluvia-secondary mb-2">Asunto</label>
+            <input 
+              type="text" 
+              id="subject" 
+              name="subject" 
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-lluvia-primary focus:ring-1 focus:ring-lluvia-primary"
+              placeholder="Asunto de tu mensaje"
+            />
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-lluvia-secondary mb-2">Mensaje</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="5"
+              required
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-lluvia-primary focus:ring-1 focus:ring-lluvia-primary"
+              placeholder="Tu mensaje..."
+            ></textarea>
+          </div>
+
+          <div>
+            <label for="phone" class="block text-sm font-medium text-lluvia-secondary mb-2">Teléfono (Opcional)</label>
+            <input 
+              type="tel" 
+              id="phone" 
+              name="phone"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-lluvia-primary focus:ring-1 focus:ring-lluvia-primary"
+              placeholder="Tu teléfono"
+            />
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <input 
+            type="checkbox" 
+            id="terms" 
+            name="terms" 
+            required
+            class="w-4 h-4 text-lluvia-primary rounded"
+          />
+          <label for="terms" class="text-sm text-gray-600">
+            Acepto los términos y condiciones
+          </label>
+        </div>
+
+        <button 
+          type="submit"
+          class="w-full bg-lluvia-primary text-lluvia-secondary font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all duration-300 hover:scale-105"
+        >
+          Enviar Mensaje
+        </button>
+      </form>
+    </div>
+  </Container>
+</section>
+
+<script>
+  const form = document.getElementById('contactForm');
+  
+  form?.addEventListener('submit', function(e) {
+    // The form will be handled by formspree or manual backend
+    // You can add custom validation here if needed
+    console.log('Form submitted');
+  });
+</script>

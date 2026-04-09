@@ -1,0 +1,52 @@
+---
+import Container from '../base/Container.astro';
+---
+
+<footer class="bg-lluvia-secondary text-white py-12 mt-20">
+  <Container>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <!-- About -->
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-10 h-10 bg-lluvia-primary rounded-lg flex items-center justify-center font-bold text-lluvia-secondary">
+            L
+          </div>
+          <span class="text-xl font-bold">Lluvia</span>
+        </div>
+        <p class="text-gray-300">Artículos de limpieza de alta calidad para tu hogar.</p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="font-bold text-lg mb-4 text-lluvia-primary">Enlaces</h3>
+        <ul class="space-y-2 text-gray-300">
+          <li><a href="#home" class="hover:text-lluvia-primary transition-colors">Inicio</a></li>
+          <li><a href="#mision" class="hover:text-lluvia-primary transition-colors">Misión</a></li>
+          <li><a href="#vision" class="hover:text-lluvia-primary transition-colors">Visión</a></li>
+          <li><a href="#productos" class="hover:text-lluvia-primary transition-colors">Productos</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="font-bold text-lg mb-4 text-lluvia-primary">Contacto</h3>
+        <ul class="space-y-2 text-gray-300">
+          <li>Email: info@lluvia.com</li>
+          <li>Teléfono: +1 (555) 123-4567</li>
+          <li>Dirección: Calle Principal 123</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-gray-700 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+        <p>&copy; 2024 Lluvia. Todos los derechos reservados.</p>
+        <div class="flex gap-4 mt-4 md:mt-0">
+          <a href="#" class="hover:text-lluvia-primary transition-colors">Privacidad</a>
+          <a href="#" class="hover:text-lluvia-primary transition-colors">Términos</a>
+        </div>
+      </div>
+    </div>
+  </Container>
+</footer>

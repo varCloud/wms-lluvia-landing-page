@@ -1,0 +1,25 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'outline';
+  className?: string;
+}
+
+const { 
+  href = '#', 
+  variant = 'primary',
+  className = ''
+} = Astro.props;
+
+const baseStyles = 'px-6 py-3 rounded-lg font-semibold transition-all duration-300 inline-block hover:scale-105';
+
+const variantStyles = {
+  primary: 'bg-lluvia-primary text-lluvia-secondary hover:bg-opacity-90',
+  secondary: 'bg-lluvia-secondary text-white hover:bg-opacity-90',
+  outline: 'border-2 border-lluvia-primary text-lluvia-primary hover:bg-lluvia-primary hover:text-lluvia-secondary'
+};
+---
+
+<a href={href} class={`${baseStyles} ${variantStyles[variant]} ${className}`}>
+  <slot />
+</a>

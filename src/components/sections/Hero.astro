@@ -1,0 +1,34 @@
+---
+import Container from '../base/Container.astro';
+import Button from '../base/Button.astro';
+---
+
+<section class="relative bg-gradient-to-br from-lluvia-secondary via-lluvia-secondary to-[#1a1a1a] text-white min-h-[600px] flex items-center pt-20 md:pt-0" id="home">
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-lluvia-primary opacity-10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-lluvia-primary opacity-10 rounded-full blur-3xl"></div>
+  </div>
+
+  <Container className="relative z-10 py-20 md:py-0">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-up">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          Bienvenido a <span class="text-lluvia-primary">Lluvia</span>
+        </h1>
+        <p class="text-lg text-gray-300 mb-8">
+          Descubre la excelencia en artículos de limpieza. Productos de alta calidad diseñados para mantener tu hogar impecable y acogedor.
+        </p>
+        <div class="flex gap-4 flex-wrap">
+          <Button variant="primary" href="#productos">Ver Productos</Button>
+          <Button variant="outline" href="#contacto">Contactanos</Button>
+        </div>
+      </div>
+
+      <div data-aos="fade-left" class="relative">
+        <div class="bg-lluvia-primary bg-opacity-20 rounded-2xl p-8 border-2 border-lluvia-primary border-opacity-30">
+          <img src="/logo_lluvia.png" alt="Lluvia Logo" class="w-full h-auto rounded-lg" />
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #bded3d;
+  --color-secondary: #040101;
+  color-scheme: light;
+}
+
+@layer base {
+  * {
+    @apply m-0 p-0 box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-sans text-lluvia-secondary bg-white leading-relaxed;
+  }
+
+  a {
+    @apply no-underline;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+
+  img {
+    @apply max-w-full h-auto block;
+  }
+}
+
+@layer components {
+  .highlight-primary {
+    @apply text-lluvia-primary;
+  }
+
+  .bg-primary {
+    @apply bg-lluvia-primary;
+  }
+
+  .bg-secondary {
+    @apply bg-lluvia-secondary;
+  }
+
+  .border-primary {
+    @apply border-lluvia-primary;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-lluvia-primary rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-opacity-80;
+}
