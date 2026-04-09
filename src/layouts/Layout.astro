@@ -52,6 +52,20 @@ const {
         once: true,
         offset: 100,
       });
+
+      // Manejar links internos para evitar refresh
+      document.addEventListener('click', function(e) {
+        const link = e.target.closest('a');
+        if (link && link.hash) {
+          const targetId = link.hash.substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+            window.history.pushState(null, null, '#' + targetId);
+          }
+        }
+      });
     </script>
   </body>
 </html>
