@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
 
 interface Props {
   title?: string;
@@ -43,6 +44,7 @@ const {
   </head>
   <body class="bg-white text-lluvia-secondary">
     <slot />
+    <WhatsAppButton />
     
     <!-- AOS Script -->
     <script is:inline src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
